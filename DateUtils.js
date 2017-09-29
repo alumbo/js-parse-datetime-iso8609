@@ -1,12 +1,5 @@
 class DateUtils {
 
-  static formatDateISO8609(date) {
-    let dateStr = date.toString();
-    let timezone = dateStr.substr(dateStr.indexOf('GMT') + 3, 5);
-    dateStr = date.toISOString().substr(0, 19) + timezone;
-    return dateStr;
-  }
-
   static parseDateISO8609(dateStr) {
     let date = new Date(dateStr);
     // In case of browser was not able to parse timezone
@@ -18,6 +11,13 @@ class DateUtils {
       date.setMinutes(date.getMinutes() - date.getTimezoneOffset());
     }
     return date;
+  }
+  
+  static formatDateISO8609(date) {
+    let dateStr = date.toString();
+    let timezone = dateStr.substr(dateStr.indexOf('GMT') + 3, 5);
+    dateStr = date.toISOString().substr(0, 19) + timezone;
+    return dateStr;
   }
 
 }
