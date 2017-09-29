@@ -1,13 +1,6 @@
 # js-parse-datetime-iso8609
 JavaScript cross-browser solution to parse a date string ISO 8609 and format a date object to string ISO 8609
 ```javascript
-  function formatDateISO8609(date) {
-    var dateStr = date.toString();
-    var timezone = dateStr.substr(dateStr.indexOf('GMT') + 3, 5);
-    dateStr = date.toISOString().substr(0, 19) + timezone;
-    return dateStr;
-  }
-
   function parseDateISO8609(dateStr) {
     var date = new Date(dateStr);
     // In case of browser was not able to parse timezone
@@ -19,5 +12,12 @@ JavaScript cross-browser solution to parse a date string ISO 8609 and format a d
       date.setMinutes(date.getMinutes() - date.getTimezoneOffset());
     }
     return date;
+  }
+  
+  function formatDateISO8609(date) {
+    var dateStr = date.toString();
+    var timezone = dateStr.substr(dateStr.indexOf('GMT') + 3, 5);
+    dateStr = date.toISOString().substr(0, 19) + timezone;
+    return dateStr;
   }
 ```
