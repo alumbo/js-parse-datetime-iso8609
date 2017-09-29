@@ -7,7 +7,7 @@ JavaScript cross-browser solution to parse a date string ISO 8609 and format a d
     var timezoneMinutes = 0;
     if (date.toString() === 'Invalid Date') {
       date = new Date(dateStr.substr(0, dateStr.length - 5));
-      var timezoneStr = date.substr(-5);
+      var timezoneStr = dateStr.substr(-5);
       var timezoneSign = timezoneStr.substr(0, 1);
       var timezoneHours = parseInt(timezoneStr.substr(1, 2));
       timezoneMinutes = parseInt(timezoneStr.substr(3, 2));
