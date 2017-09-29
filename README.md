@@ -1,6 +1,5 @@
 # js-parse-datetime-iso8609
-JavaScript cross-browser solution to parse a date string ISO 8609 and format a date object to string ISO 8609.
-Example: '2017-09-29T00:48:07+0400'
+JavaScript cross-browser solution to parse a date string ISO 8609 and format a date object to string ISO 8609 (2017-09-29T00:48:07+0400)
 
 ```javascript
   function parseDateISO8609(dateStr) {
