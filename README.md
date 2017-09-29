@@ -16,7 +16,7 @@ JavaScript cross-browser solution to parse a date string ISO 8609 and format a d
     }
     // In case of browser did not impact timezone offset on date
     if (dateStr.indexOf(date.toString().substr(16, 8)) !== -1) {
-      date.setMinutes(date.getMinutes() - date.getTimezoneOffset());
+      timezoneMinutes -= date.getTimezoneOffset();
     }
     date.setMinutes(date.getMinutes() - timezoneMinutes);
     return date;
