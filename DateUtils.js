@@ -1,9 +1,9 @@
 class DateUtils {
 
   static formatDateISO8609(date) {
-    let timezone = date.toString();
-    timezone = timezone.substr(timezone.indexOf('GMT') + 3, 5);
-    const dateStr = date.toISOString().substr(0,19) + timezone;
+    let dateStr = date.toString();
+    let timezone = dateStr.substr(dateStr.indexOf('GMT') + 3, 5);
+    dateStr = date.toISOString().substr(0, 19) + timezone;
     return dateStr;
   }
 
