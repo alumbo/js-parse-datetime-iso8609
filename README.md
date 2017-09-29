@@ -4,7 +4,7 @@ JavaScript cross-browser solution to parse a date string ISO 8609 and format a d
   function formatDateISO8609(date) {
     var timezone = date.toString();
     timezone = timezone.substr(timezone.indexOf('GMT') + 3, 5);
-    const dateStr = date.toISOString().substr(0,19) + timezone;
+    var dateStr = date.toISOString().substr(0,19) + timezone;
     return dateStr;
   }
 
